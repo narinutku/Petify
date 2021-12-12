@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC6C7"
+    tools:context=".ui.fragments.ProfileFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+<ImageView
+    android:layout_marginTop="32dp"
+    android:layout_width="180dp"
+    android:layout_gravity="center_horizontal"
+    android:src="@drawable/cat"
+android:background="#FFFFFF"
+    android:foreground="@drawable/rounded_fg"
+    android:layout_height="180dp">
+
+
+</ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:text="User 1">
+
+        </TextView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+
+        android:layout_height="72dp">
+        <Button
+            android:background="@drawable/drawable_choices"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:text="Follow"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_height="match_parent">
+
+        </Button>
+        <Button
+            android:background="@drawable/drawable_choices"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_width="match_parent"
+            android:text="Message"
+            android:layout_height="match_parent">
+
+        </Button>
+    </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Adverts"
+            android:layout_marginTop="16dp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:textColor="#000000"
+
+            android:textSize="24sp">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="See All >"
+
+            android:textStyle="italic"
+            android:gravity="right"
+            android:layout_marginRight="4dp"
+            android:textColor="#000000"
+
+            android:textSize="16sp">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginRight="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_weight="9">
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+           <TextView
+               android:layout_width="120dp"
+               android:layout_height="wrap_content"
+               android:padding="6dp"
+               android:background="@drawable/drawable_choices"
+               android:text="What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+               android:textStyle="italic"
+               android:gravity="right"
+               android:layout_marginRight="4dp"
+               android:textColor="#000000"
+
+               android:textSize="16sp">      </TextView>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:background="@drawable/drawable_choices"
+                    android:text="What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+                    android:textStyle="italic"
+                    android:gravity="right"
+                    android:layout_marginRight="4dp"
+                    android:textColor="#000000"
+
+                    android:textSize="16sp">      </TextView>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:background="@drawable/drawable_choices"
+                    android:text="What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+                    android:textStyle="italic"
+                    android:gravity="right"
+                    android:layout_marginRight="4dp"
+                    android:textColor="#000000"
+
+                    android:textSize="16sp">      </TextView>
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                    android:padding="6dp"
+                    android:background="@drawable/drawable_choices"
+                    android:textStyle="italic"
+                    android:gravity="right"
+                    android:layout_marginRight="4dp"
+                    android:textColor="#000000"
+
+                    android:textSize="16sp">
+
+           </TextView>
+
+
+
+
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+</LinearLayout>
+
+</FrameLayout>

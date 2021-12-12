@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/icon_group"
+        android:icon="@drawable/ic_baseline_group_24"
+        android:title="Topluluk" />
+
+    <item
+        android:id="@+id/icon_message"
+        android:icon="@drawable/ic_baseline_message_24"
+        android:title="Mesajlar" />
+    <item
+        android:id="@+id/icon_main_page"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:title="Anasayfa" />
+    <item
+        android:id="@+id/icon_star"
+        android:icon="@drawable/ic_baseline_star_border_24"
+        android:title="Takip Edilenler" />
+
+    <item
+        android:id="@+id/icon_person"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profil" />
+</menu>

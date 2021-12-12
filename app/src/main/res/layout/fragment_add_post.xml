@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1DFDF"
+    tools:context=".ui.fragments.AddPostFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/drawable_choices"
+                android:padding="4dp">
+                            <ImageView
+                                android:src="@drawable/ic_baseline_arrow_back_24_black"
+                                android:layout_width="match_parent"
+                                android:layout_weight="8"
+                                android:layout_height="match_parent">
+
+                            </ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="İlan Ver"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold">
+
+
+                </TextView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#9577B3"
+
+                android:gravity="center"
+                android:text="Resimler"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold"></TextView>
+
+            <ImageView
+                android:id="@+id/image_add_photo"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:src="@drawable/ic_baseline_add_box_24">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#9577B3"
+                android:text="Kategori"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold">
+
+
+            </TextView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <CheckBox
+
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:checked="true"
+                    android:text="Category 1" />
+
+                <CheckBox
+
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+
+                    android:text="Category 2" />
+
+                <CheckBox
+
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+
+                    android:text="Category 3" />
+
+                <CheckBox
+
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:text="Category 4" />
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#9577B3"
+                android:text="Tür"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold">
+
+
+            </TextView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <CheckBox
+
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:checked="true"
+                    android:text="Category 1" />
+
+                <CheckBox
+
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+
+                    android:text="Category 2" />
+
+                <CheckBox
+
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+
+                    android:text="Category 3" />
+
+                <CheckBox
+
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:text="Category 4" />
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#9577B3"
+                android:text="İletişim Bilgileri"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold">
+
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/drawable_choices"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <EditText
+                    android:id="@+id/edittextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_person_24"
+                    android:drawablePadding="12dp"
+                    android:hint="Ad Soyad">
+
+                </EditText>
+
+                <EditText
+                    android:id="@+id/edittextPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+                    android:drawablePadding="12dp"
+                    android:hint="Telefon"
+                    android:inputType="phone">
+
+                </EditText>
+
+                <EditText
+                    android:id="@+id/edittextAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                    android:drawablePadding="12dp"
+                    android:hint="Adres"
+                    android:inputType="phone">
+
+                </EditText>
+            </LinearLayout>
+
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_sign_up"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginRight="16dp"-->
+<!--                    android:layout_weight="1"-->
+
+<!--                    android:background="#7F5AF0"-->
+<!--                    android:text="Geri Dön"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textStyle="italic" />-->
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:layout_margin="4dp"
+                    android:background="#2CB67D"
+
+                    android:text="Yayınla"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+
+                    android:textStyle="italic" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
