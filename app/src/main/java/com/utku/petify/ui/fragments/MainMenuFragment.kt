@@ -1,6 +1,5 @@
 package com.utku.petify.ui.fragments
 
-import android.R.attr.fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,7 +28,7 @@ class MainMenuFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val postService = ApiClient.getClient().create(PostService::class.java)
-        val post = postService.listPost("1")
+        val post = postService.login("test@gmail.com","484656ck")
         post.enqueue(object : Callback<List<User>> {
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
                 Toast.makeText(context, t.message.toString(), Toast.LENGTH_LONG).show()
