@@ -1,36 +1,26 @@
 package com.utku.petify.ui.helper
 
-import com.utku.petify.ui.model.User
+import com.utku.petify.ui.model.*
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface PostService {
-    @POST("api/v1/auth/login")
+
+    @POST("auth/login")
     fun login(
-        @Query("username") username: String,
-        @Query("password") password: String
-    ): Call<List<User>>
+     @Body login: Login
+    ): Call<User>
 
-    @POST("api/v1/register")
+    @POST("register")
     fun register(
+@Body signUpRequest: SignUpRequest
+    ): Call<SignUpResponse>
 
-        @Query("firstName") firstName: String,
-        @Query("lastName") lastName: String,
-        @Query("birthDate") birthDate: String,
-        @Query("phoneNumber") phoneNumber: String,
-        @Query("eMail") eMail: String,
-        @Query("gender") gender: String,
-        @Query("password") password: String
-    ): Call<String>
-
-    @GET("api/v1/my-account")
+    @GET("users/all")
     fun getProfile(
 
-    ): Call<User>
-    @PUT("api/v1/register")
+    ): Call<List<UserProfile>>
+    @PUT("update-profile")
     fun updateProfile(
 
         @Query("firstName") firstName: String,
@@ -42,7 +32,7 @@ interface PostService {
         @Query("password") password: String
     ): Call<String>
 
-    @GET("api/v1/register")
+    @GET("account-verify")
     fun accountVerify(
         @Query("verificationToken") verificationToken: String,
 

@@ -5,9 +5,15 @@
     android:layout_height="match_parent"
     android:background="#FFC6C7"
     tools:context=".ui.fragments.ProfileFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
 <LinearLayout
     android:layout_width="match_parent"
     android:orientation="vertical"
+
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,8 +31,16 @@ android:background="#FFFFFF"
 
 
 </ImageView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/drawable_choices"
+    android:orientation="vertical">
+
 
         <TextView
+            android:id="@+id/txt_username_profile"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:textStyle="italic"
@@ -36,32 +50,55 @@ android:background="#FFFFFF"
             android:text="User 1">
 
         </TextView>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+<!--    <LinearLayout-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_width="match_parent"-->
 
-        android:layout_height="72dp">
-        <Button
-            android:background="@drawable/drawable_choices"
-            android:layout_weight="1"
+<!--        android:layout_height="72dp">-->
+<!--        <Button-->
+<!--            android:background="@drawable/drawable_choices"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:text="Follow"-->
+<!--            android:layout_marginLeft="4dp"-->
+<!--            android:layout_marginRight="4dp"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </Button>-->
+<!--        <Button-->
+<!--            android:background="@drawable/drawable_choices"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginLeft="4dp"-->
+<!--            android:layout_marginRight="4dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:text="Message"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </Button>-->
+<!--    </LinearLayout>-->
+        <TextView
+            android:id="@+id/txt_mail_profile"
             android:layout_width="match_parent"
-            android:text="Follow"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_height="match_parent">
+            android:layout_height="64dp"
+            android:textStyle="italic"
+            android:layout_marginStart="16dp"
+            android:textColor="#000000"
+            android:textSize="18sp"
 
-        </Button>
-        <Button
-            android:background="@drawable/drawable_choices"
-            android:layout_weight="1"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
+            android:text="Email: ">    </TextView>
+        <TextView
+            android:id="@+id/txt_phone_profile"
             android:layout_width="match_parent"
-            android:text="Message"
-            android:layout_height="match_parent">
+            android:layout_height="64dp"
+            android:textStyle="italic"
+            android:layout_marginLeft="16dp"
+            android:textColor="#000000"
+            android:textSize="18sp"
 
-        </Button>
-    </LinearLayout>
+            android:text="Phone Number: ">
+
+        </TextView>
+</LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="32dp"
@@ -175,5 +212,5 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
     </LinearLayout>
 </LinearLayout>
-
+    </ScrollView>
 </FrameLayout>

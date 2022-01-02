@@ -1,5 +1,5 @@
 package com.utku.petify.ui.model
 
 object Constant {
-    var baseUrl: String = "http://localhost:8080/"
+    var baseUrl: String = "https://petify-api-v1.herokuapp.com/api/v1/"
 }

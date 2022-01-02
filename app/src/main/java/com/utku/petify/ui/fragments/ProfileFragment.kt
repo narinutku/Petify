@@ -1,5 +1,6 @@
 package com.utku.petify.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.utku.petify.ui.adapter.MainMenuAdapter
 import com.utku.petify.ui.helper.PostService
 import com.utku.petify.ui.model.ApiClient
 import com.utku.petify.ui.model.User
+import com.utku.petify.ui.model.UserProfile
 import kotlinx.android.synthetic.main.fragment_main_menu.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import retrofit2.Call
@@ -19,7 +21,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class ProfileFragment : Fragment() {
-
+var username=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,19 +40,24 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val postService = ApiClient.getClient().create(PostService::class.java)
         val post = postService.getProfile()
-        post.enqueue(object : Callback<User> {
+        val prefences = requireActivity().getSharedPreferences("USER", Context.MODE_PRIVATE)
+        username = prefences.getString("User","").toString()
+        post.enqueue(object : Callback<List<UserProfile>> {
 
 
-            override fun onFailure(call: Call<User>?, t: Throwable?) {
+            override fun onFailure(call: Call<List<UserProfile>>?, t: Throwable?) {
                 if (t != null) {
                     Toast.makeText(context, t.message.toString(), Toast.LENGTH_LONG).show()
                 }
             }
 
-            override fun onResponse(call: Call<User>?, response: Response<User>?) {
+            override fun onResponse(call: Call<List<UserProfile>>?, response: Response<List<UserProfile>>?) {
                 if (response != null) {
                     if (response.isSuccessful) {
-                     //ekrana bastırılacak
+                        var List: List<UserProfile> = response.body().filter { s -> s.eMail==username }
+                    txt_mail_profile.text="E mail: "+List[0].eMail
+                        txt_phone_profile.text="Phone Number: "+ List[0].phoneNumber
+                        txt_username_profile.text=List[0].firstName+" "+List[0].lastName
                     }
                 }
             }
