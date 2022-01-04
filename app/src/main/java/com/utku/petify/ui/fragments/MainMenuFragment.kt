@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.utku.petify.R
 import com.utku.petify.ui.adapter.MainMenuAdapter
 import com.utku.petify.ui.helper.PostService
+import com.utku.petify.ui.model.AdvertResponse
 import com.utku.petify.ui.model.ApiClient
-import com.utku.petify.ui.model.User
 import kotlinx.android.synthetic.main.fragment_main_menu.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,24 +24,10 @@ import retrofit2.Response
 class MainMenuFragment : Fragment() {
 
 //    lateinit var postService: PostService
-    var postList: MutableList<User>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        val postService = ApiClient.getClient().create(PostService::class.java)
-//        val post = postService.login("test@gmail.com","484656ck")
-//        post.enqueue(object : Callback<List<User>> {
-//            override fun onFailure(call: Call<List<User>>, t: Throwable) {
-//                Toast.makeText(context, t.message.toString(), Toast.LENGTH_LONG).show()
-//            }
-//
-//            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
-//
-//                if (response.isSuccessful) {
-//                  postList = (response.body() as MutableList<User>?)!!
-//                    createList(postList!!)
-//                }
-//            }
-//        })
+
     }
 
     override fun onCreateView(
@@ -49,16 +35,34 @@ class MainMenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        val postService = ApiClient.getClient().create(PostService::class.java)
+        val post=postService.getAdverties()
+        post.enqueue(object : Callback<MutableList<AdvertResponse>>{
+            override fun onResponse(
+                call: Call<MutableList<AdvertResponse>?>?,
+                response: Response<MutableList<AdvertResponse>?>?
+            ) {
+                if (response != null) {
+                    response.body()?.let { showAdverties(it) }
+                };
 
+            }
+
+            override fun onFailure(call: Call<MutableList<AdvertResponse>?>?, t: Throwable?) {
+                if (t != null) {
+                    Toast.makeText(context, t.message.toString(), Toast.LENGTH_LONG).show()
+                }
+            }
+
+
+        })
         return inflater.inflate(R.layout.fragment_main_menu, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recycler_main_menu.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = MainMenuAdapter(arrayListOf("Kayıp Kedi", "Dün kayboldu", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor", "Aranıyor"))
-        }
+
+
         image_button_add_post.setOnClickListener {
             val fragmentAddPostFragment = AddPostFragment()
             val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
@@ -66,12 +70,16 @@ class MainMenuFragment : Fragment() {
             fragmentTransaction.commit()
         }
     }
-    fun createList(list: MutableList<User>){
+
+    private fun showAdverties(mutableList: MutableList<AdvertResponse>) {
         recycler_main_menu.apply {
             layoutManager = LinearLayoutManager(activity)
-          //  adapter = MainMenuAdapter(arrayListOf(list[0].id_.toString(), list[0].userId.toString(), list[1].id_.toString(), list[1].userId.toString()))
+            adapter = MainMenuAdapter(mutableList)
         }
     }
+
+
+
 
 
 

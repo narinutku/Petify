@@ -38,4 +38,11 @@ interface PostService {
 
     ): Call<String>
 
+    @GET("advertise/all")
+    fun getAdverties():Call<MutableList<AdvertResponse>>
+    @POST("advertise")
+    fun addAdverties( @Body advertRequest: AdvertRequest):Call<AdvertResponse>
+
+
+
 }

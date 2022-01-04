@@ -24,19 +24,21 @@
                 android:layout_margin="4dp"
                 android:background="@drawable/drawable_choices"
                 android:padding="4dp">
-                            <ImageView
-                                android:src="@drawable/ic_baseline_arrow_back_24_black"
-                                android:layout_width="match_parent"
-                                android:layout_weight="8"
-                                android:layout_height="match_parent">
 
-                            </ImageView>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:src="@drawable/ic_baseline_arrow_back_24_black">
+
+                </ImageView>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:text="İlan Ver"
+                    android:text="Add Post"
                     android:textAlignment="center"
                     android:textColor="#000000"
                     android:textSize="22sp"
@@ -52,11 +54,11 @@
                 android:background="#9577B3"
 
                 android:gravity="center"
-                android:text="Resimler"
+                android:text="Pictures"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="22sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/image_add_photo"
@@ -65,12 +67,105 @@
                 android:src="@drawable/ic_baseline_add_box_24">
 
             </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#9577B3"
+                android:text="Information"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold">
+
+
+            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/drawable_choices"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <EditText
+                    android:id="@+id/edittextTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                   android:padding="12dp"
+                    android:hint="Title for Post">
+
+                </EditText>
+
+                <EditText
+                    android:id="@+id/edittextDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="240"
+                    android:padding="12dp"
+                    android:hint="Description for Post( Max 240 character)"
+                    >
+
+                </EditText>
+
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="#9577B3"
-                android:text="Kategori"
+                android:text="Gender"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold">
+
+
+            </TextView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="1">
+
+                <RadioGroup
+                    android:id="@+id/radioGroupgender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnSpan="1"
+                    android:background="#024CAF50">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonMale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+
+
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonFemale"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:textSize="18sp" />
+
+
+                </RadioGroup>
+
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#9577B3"
+                android:text="Genus"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="22sp"
@@ -85,36 +180,33 @@
                 android:columnCount="2"
                 android:rowCount="2">
 
-                <CheckBox
-
+                <RadioGroup
+                    android:id="@+id/radioGroupGenus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="0"
-                    android:layout_columnWeight="1"
-                    android:checked="true"
-                    android:text="Category 1" />
+                    android:layout_columnSpan="1"
+                    android:background="#024CAF50">
 
-                <CheckBox
+                    <RadioButton
+                        android:id="@+id/radioButtonCat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cat"
 
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:layout_columnWeight="1"
 
-                    android:text="Category 2" />
+                        android:textSize="18sp" />
 
-                <CheckBox
+                    <RadioButton
+                        android:id="@+id/radioButtonDog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dog"
+                        android:textSize="18sp" />
 
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:layout_columnWeight="1"
 
-                    android:text="Category 3" />
-
-                <CheckBox
-
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:layout_columnWeight="1"
-                    android:text="Category 4" />
+                </RadioGroup>
 
             </GridLayout>
 
@@ -122,59 +214,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="#9577B3"
-                android:text="Tür"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="22sp"
-                android:textStyle="bold">
-
-
-            </TextView>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:rowCount="2">
-
-                <CheckBox
-
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    android:layout_columnWeight="1"
-                    android:checked="true"
-                    android:text="Category 1" />
-
-                <CheckBox
-
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:layout_columnWeight="1"
-
-                    android:text="Category 2" />
-
-                <CheckBox
-
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:layout_columnWeight="1"
-
-                    android:text="Category 3" />
-
-                <CheckBox
-
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:layout_columnWeight="1"
-                    android:text="Category 4" />
-
-            </GridLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="#9577B3"
-                android:text="İletişim Bilgileri"
+                android:text="Contact Information"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="22sp"
@@ -197,7 +237,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_baseline_person_24"
                     android:drawablePadding="12dp"
-                    android:hint="Ad Soyad">
+                    android:hint="Name">
 
                 </EditText>
 
@@ -207,50 +247,49 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_baseline_local_phone_24"
                     android:drawablePadding="12dp"
-                    android:hint="Telefon"
+                    android:hint="Phone Number"
                     android:inputType="phone">
 
                 </EditText>
 
                 <EditText
-                    android:id="@+id/edittextAddress"
+                    android:id="@+id/edittextMail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                    android:drawableLeft="@drawable/ic_baseline_email_24"
                     android:drawablePadding="12dp"
-                    android:hint="Adres"
-                    android:inputType="phone">
+                    android:hint="Mail"
+                   >
 
                 </EditText>
             </LinearLayout>
 
 
+            <!--                <Button-->
+            <!--                    android:id="@+id/btn_sign_up"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginRight="16dp"-->
+            <!--                    android:layout_weight="1"-->
 
-<!--                <Button-->
-<!--                    android:id="@+id/btn_sign_up"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginRight="16dp"-->
-<!--                    android:layout_weight="1"-->
+            <!--                    android:background="#7F5AF0"-->
+            <!--                    android:text="Geri Dön"-->
+            <!--                    android:textAlignment="center"-->
+            <!--                    android:textSize="18sp"-->
+            <!--                    android:textStyle="italic" />-->
 
-<!--                    android:background="#7F5AF0"-->
-<!--                    android:text="Geri Dön"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textSize="18sp"-->
-<!--                    android:textStyle="italic" />-->
+            <Button
+                android:id="@+id/btn_add_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="#2CB67D"
 
-                <Button
-                    android:id="@+id/btn_next"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   android:layout_margin="4dp"
-                    android:background="#2CB67D"
+                android:text="Share"
+                android:textAlignment="center"
+                android:textSize="18sp"
 
-                    android:text="Yayınla"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-
-                    android:textStyle="italic" />
+                android:textStyle="italic" />
 
         </LinearLayout>
 
